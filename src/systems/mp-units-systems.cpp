@@ -22,6 +22,16 @@
 
 module;
 
+// Stuff I added to try and make this build
+
+// #define MP_UNITS_IMPORT_STD 1  // Use `import std;`
+#define MP_UNITS_USE_FMTLIB 0  // Use std::format
+#define MP_UNITS_HOSTED 1  // Do not set up for freestanding use
+#define MP_UNITS_API_NO_CRTP 1  // Use explicit `this` instead of CRTP
+#define MP_UNITS_API_THROWING_CONSTRAINTS 1  // Some error handling thing?
+
+// End of stuff I added
+
 #include <mp-units/bits/core_gmf.h>
 #include <chrono>
 

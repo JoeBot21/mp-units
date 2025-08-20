@@ -22,13 +22,23 @@
 
 module;
 
-#include <mp-units/bits/core_gmf.h>
+// Stuff I added to try and make this build
 
-export module mp_units.core;
+// #define MP_UNITS_IMPORT_STD 1  // Use `import std;`
+#define MP_UNITS_USE_FMTLIB 0  // Use std::format
+#define MP_UNITS_HOSTED 1  // Do not set up for freestanding use
+#define MP_UNITS_API_NO_CRTP 1  // Use explicit `this` instead of CRTP
+#define MP_UNITS_API_THROWING_CONSTRAINTS 1  // Some error handling thing?
+
+// End of stuff I added
 
 #ifdef MP_UNITS_IMPORT_STD
 import std;
 #endif
+
+#include <mp-units/bits/core_gmf.h>
+
+export module mp_units.core;
 
 #define MP_UNITS_IN_MODULE_INTERFACE
 
